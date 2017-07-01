@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +21,51 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S•S•U•M•A•P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO7-mk-iIg">
+                                <rect key="frame" x="0.0" y="472.5" width="375" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2017 All rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1k-Yj-wDh">
+                                <rect key="frame" x="0.0" y="638" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eas-Ig-WNf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="eUU-Jd-ZnU">
+                                <rect key="frame" x="0.0" y="212.5" width="375" height="243"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eUU-Jd-ZnU" secondAttribute="height" multiplier="125:81" id="MFn-xO-mqH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.396078431372549" green="0.69411764705882351" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TO7-mk-iIg" secondAttribute="trailing" id="9Ju-ad-gaG"/>
+                            <constraint firstItem="TO7-mk-iIg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HkZ-E3-gfA"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="H1k-Yj-wDh" secondAttribute="bottom" constant="8" symbolic="YES" id="YX4-xz-dnF"/>
+                            <constraint firstItem="H1k-Yj-wDh" firstAttribute="leading" secondItem="TO7-mk-iIg" secondAttribute="leading" id="Ym1-4j-wxu"/>
+                            <constraint firstItem="H1k-Yj-wDh" firstAttribute="trailing" secondItem="TO7-mk-iIg" secondAttribute="trailing" id="cxJ-IC-gRo"/>
+                            <constraint firstItem="eUU-Jd-ZnU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g5X-6G-QOZ"/>
+                            <constraint firstItem="TO7-mk-iIg" firstAttribute="top" secondItem="eUU-Jd-ZnU" secondAttribute="bottom" constant="17" id="oqR-Hv-zkZ"/>
+                            <constraint firstAttribute="trailing" secondItem="eUU-Jd-ZnU" secondAttribute="trailing" id="qg9-I1-O7Z"/>
+                            <constraint firstItem="eUU-Jd-ZnU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="r1p-dt-CRh"/>
+                            <constraint firstItem="eUU-Jd-ZnU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rDD-76-LfI"/>
+                        </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="main_logo" width="720" height="468"/>
+    </resources>
 </document>

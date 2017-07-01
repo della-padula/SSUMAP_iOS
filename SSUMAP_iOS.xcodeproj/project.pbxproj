@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AF669FD1E8184948903CB78 /* Pods_SSUMAP_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045CFD84CC4A049A09DAE5F5 /* Pods_SSUMAP_iOSUITests.framework */; };
+		7825F66E62B03766CF95E1BB /* Pods_SSUMAP_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E45CD351C195FD5E9D339B /* Pods_SSUMAP_iOSTests.framework */; };
+		7EE10D0975F798979B957D9A /* Pods_SSUMAP_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78FB6ECB14BD89C7D7645CD /* Pods_SSUMAP_iOS.framework */; };
 		DE087F451F062550004B092C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087F441F062550004B092C /* AppDelegate.swift */; };
 		DE087F471F062550004B092C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087F461F062550004B092C /* ViewController.swift */; };
 		DE087F4A1F062550004B092C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE087F481F062550004B092C /* Main.storyboard */; };
@@ -34,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045CFD84CC4A049A09DAE5F5 /* Pods_SSUMAP_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUMAP_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C5D6620D73D6593E189841D /* Pods-SSUMAP_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUMAP_iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSUMAP_iOSTests/Pods-SSUMAP_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		17E45CD351C195FD5E9D339B /* Pods_SSUMAP_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUMAP_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BAB184A2BA009A108C75F66 /* Pods-SSUMAP_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUMAP_iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSUMAP_iOSTests/Pods-SSUMAP_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A2325EF8B82D940420E2227 /* Pods-SSUMAP_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUMAP_iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSUMAP_iOSUITests/Pods-SSUMAP_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BBEB40A8E58FC53BA2CD6E57 /* Pods-SSUMAP_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUMAP_iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSUMAP_iOSUITests/Pods-SSUMAP_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0F68CDC4F6EC4DD059CC51B /* Pods-SSUMAP_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUMAP_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSUMAP_iOS/Pods-SSUMAP_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		CEF85048D1BC6FDBD7FCC88E /* Pods-SSUMAP_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUMAP_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSUMAP_iOS/Pods-SSUMAP_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DE087F411F062550004B092C /* SSUMAP_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSUMAP_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE087F441F062550004B092C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE087F461F062550004B092C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		DE087F601F062550004B092C /* SSUMAP_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSUMAP_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE087F641F062550004B092C /* SSUMAP_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUMAP_iOSUITests.swift; sourceTree = "<group>"; };
 		DE087F661F062550004B092C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F78FB6ECB14BD89C7D7645CD /* Pods_SSUMAP_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUMAP_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE10D0975F798979B957D9A /* Pods_SSUMAP_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7825F66E62B03766CF95E1BB /* Pods_SSUMAP_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF669FD1E8184948903CB78 /* Pods_SSUMAP_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33A7FD68DE1A36E1669FE935 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEF85048D1BC6FDBD7FCC88E /* Pods-SSUMAP_iOS.debug.xcconfig */,
+				C0F68CDC4F6EC4DD059CC51B /* Pods-SSUMAP_iOS.release.xcconfig */,
+				6BAB184A2BA009A108C75F66 /* Pods-SSUMAP_iOSTests.debug.xcconfig */,
+				0C5D6620D73D6593E189841D /* Pods-SSUMAP_iOSTests.release.xcconfig */,
+				BBEB40A8E58FC53BA2CD6E57 /* Pods-SSUMAP_iOSUITests.debug.xcconfig */,
+				7A2325EF8B82D940420E2227 /* Pods-SSUMAP_iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB91BCAD5F114DE441511646 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17E45CD351C195FD5E9D339B /* Pods_SSUMAP_iOSTests.framework */,
+				045CFD84CC4A049A09DAE5F5 /* Pods_SSUMAP_iOSUITests.framework */,
+				F78FB6ECB14BD89C7D7645CD /* Pods_SSUMAP_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE087F381F062550004B092C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				DE087F581F062550004B092C /* SSUMAP_iOSTests */,
 				DE087F631F062550004B092C /* SSUMAP_iOSUITests */,
 				DE087F421F062550004B092C /* Products */,
+				33A7FD68DE1A36E1669FE935 /* Pods */,
+				CB91BCAD5F114DE441511646 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE087F691F062550004B092C /* Build configuration list for PBXNativeTarget "SSUMAP_iOS" */;
 			buildPhases = (
+				F6019E4B4CCBFDB71644B3E4 /* [CP] Check Pods Manifest.lock */,
 				DE087F3D1F062550004B092C /* Sources */,
 				DE087F3E1F062550004B092C /* Frameworks */,
 				DE087F3F1F062550004B092C /* Resources */,
+				EAC28A695AF1FBAD6691600C /* [CP] Embed Pods Frameworks */,
+				BF62DEB67E312E0A5FC9B729 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE087F6C1F062550004B092C /* Build configuration list for PBXNativeTarget "SSUMAP_iOSTests" */;
 			buildPhases = (
+				533ECA9270ED61FA4D846E27 /* [CP] Check Pods Manifest.lock */,
 				DE087F511F062550004B092C /* Sources */,
 				DE087F521F062550004B092C /* Frameworks */,
 				DE087F531F062550004B092C /* Resources */,
+				B5ED91AB0D3200BF1710D971 /* [CP] Embed Pods Frameworks */,
+				334D394702B020EEE87AAE9C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE087F6F1F062550004B092C /* Build configuration list for PBXNativeTarget "SSUMAP_iOSUITests" */;
 			buildPhases = (
+				8C351E4D6E9A718E90849F0B /* [CP] Check Pods Manifest.lock */,
 				DE087F5C1F062550004B092C /* Sources */,
 				DE087F5D1F062550004B092C /* Frameworks */,
 				DE087F5E1F062550004B092C /* Resources */,
+				683E7E787919FDC3B76165E4 /* [CP] Embed Pods Frameworks */,
+				C666511EED3FEF02D6D6F8BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		334D394702B020EEE87AAE9C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUMAP_iOSTests/Pods-SSUMAP_iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		533ECA9270ED61FA4D846E27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		683E7E787919FDC3B76165E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUMAP_iOSUITests/Pods-SSUMAP_iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C351E4D6E9A718E90849F0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B5ED91AB0D3200BF1710D971 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUMAP_iOSTests/Pods-SSUMAP_iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF62DEB67E312E0A5FC9B729 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUMAP_iOS/Pods-SSUMAP_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C666511EED3FEF02D6D6F8BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUMAP_iOSUITests/Pods-SSUMAP_iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAC28A695AF1FBAD6691600C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUMAP_iOS/Pods-SSUMAP_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6019E4B4CCBFDB71644B3E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE087F3D1F062550004B092C /* Sources */ = {
@@ -415,10 +602,21 @@
 		};
 		DE087F6A1F062550004B092C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEF85048D1BC6FDBD7FCC88E /* Pods-SSUMAP_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/terry/Downloads/maps.ios-master/Frameworks",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SSUMAP_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gydect48.SSUMAP-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,10 +626,17 @@
 		};
 		DE087F6B1F062550004B092C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F68CDC4F6EC4DD059CC51B /* Pods-SSUMAP_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/terry/Downloads/maps.ios-master/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SSUMAP_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gydect48.SSUMAP-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +646,7 @@
 		};
 		DE087F6D1F062550004B092C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BAB184A2BA009A108C75F66 /* Pods-SSUMAP_iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +662,7 @@
 		};
 		DE087F6E1F062550004B092C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C5D6620D73D6593E189841D /* Pods-SSUMAP_iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +678,7 @@
 		};
 		DE087F701F062550004B092C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBEB40A8E58FC53BA2CD6E57 /* Pods-SSUMAP_iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
@@ -485,6 +693,7 @@
 		};
 		DE087F711F062550004B092C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2325EF8B82D940420E2227 /* Pods-SSUMAP_iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P6E4GUVUC9;
@@ -516,6 +725,7 @@
 				DE087F6B1F062550004B092C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE087F6C1F062550004B092C /* Build configuration list for PBXNativeTarget "SSUMAP_iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +734,7 @@
 				DE087F6E1F062550004B092C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE087F6F1F062550004B092C /* Build configuration list for PBXNativeTarget "SSUMAP_iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +743,7 @@
 				DE087F711F062550004B092C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
