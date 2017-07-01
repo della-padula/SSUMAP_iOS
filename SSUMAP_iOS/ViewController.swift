@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 import GoogleMaps
 
 let kMapStyle = "[" +
@@ -46,12 +47,18 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     var locationStart = CLLocation()
     var locationEnd = CLLocation()
     
+    var cur_longitude : Double = 126.959577
+    var cur_latitude : Double = 37.494944
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     @IBAction func surroundingButton(_ sender: Any) {
-        
+                guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "surroundingVC") as? SurroundingViewController else {
+                    return
+                }
+                self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     @IBAction func routeButton(_ sender: Any) {
@@ -59,14 +66,51 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     }
     
     @IBAction func curLocationButton(_ sender: Any) {
+        let camera = GMSCameraPosition.camera(withLatitude: self.cur_latitude, longitude: self.cur_longitude, zoom: 17.0)
+        self.googleMapView.camera = camera
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let latestLocation: AnyObject = locations[locations.count - 1]
         
+        
+        print(latestLocation.coordinate.latitude)
+        print(latestLocation.coordinate.longitude)
+        
+        self.cur_longitude = latestLocation.coordinate.longitude
+        self.cur_latitude = latestLocation.coordinate.latitude
+        
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(latestLocation as! CLLocation) {
+            (placemarks, error) -> Void in
+            if let placemarks = placemarks, placemarks.count > 0 {
+                let placemark = placemarks[0]
+                print(placemark)
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("GPS Error => \(error.localizedDescription)")
+    }
+    
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        // 애플리케이션의 위치 추적 허가 상태가 변경될 경우 호출
+        print("위치 허가 상태 변경됨")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "홈"
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
         //37.494944, 126.959577
-        let camera = GMSCameraPosition.camera(withLatitude: 37.494944, longitude: 126.959577, zoom: 17.0)
+        let camera = GMSCameraPosition.camera(withLatitude: self.cur_latitude, longitude: self.cur_longitude, zoom: 17.0)
         
         self.googleMapView.delegate = self
         self.googleMapView.camera = camera
