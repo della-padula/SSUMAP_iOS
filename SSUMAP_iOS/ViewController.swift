@@ -55,7 +55,10 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     }
     
     @IBAction func surroundingButton(_ sender: Any) {
-        
+                guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "surroundingVC") as? SurroundingViewController else {
+                    return
+                }
+                self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     @IBAction func routeButton(_ sender: Any) {
