@@ -17,6 +17,7 @@
 		DE087F4F1F062550004B092C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE087F4D1F062550004B092C /* LaunchScreen.storyboard */; };
 		DE087F5A1F062550004B092C /* SSUMAP_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087F591F062550004B092C /* SSUMAP_iOSTests.swift */; };
 		DE087F651F062550004B092C /* SSUMAP_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE087F641F062550004B092C /* SSUMAP_iOSUITests.swift */; };
+		DE74E5611F0766A900A36E56 /* BuildingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74E5601F0766A900A36E56 /* BuildingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		DE087F601F062550004B092C /* SSUMAP_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSUMAP_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE087F641F062550004B092C /* SSUMAP_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUMAP_iOSUITests.swift; sourceTree = "<group>"; };
 		DE087F661F062550004B092C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE74E5601F0766A900A36E56 /* BuildingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingModel.swift; sourceTree = "<group>"; };
 		F78FB6ECB14BD89C7D7645CD /* Pods_SSUMAP_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUMAP_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,12 +139,13 @@
 		DE087F431F062550004B092C /* SSUMAP_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DE74E5621F0767CB00A36E56 /* ViewController */,
 				DE087F441F062550004B092C /* AppDelegate.swift */,
-				DE087F461F062550004B092C /* ViewController.swift */,
 				DE087F481F062550004B092C /* Main.storyboard */,
 				DE087F4B1F062550004B092C /* Assets.xcassets */,
 				DE087F4D1F062550004B092C /* LaunchScreen.storyboard */,
 				DE087F501F062550004B092C /* Info.plist */,
+				DE74E5601F0766A900A36E56 /* BuildingModel.swift */,
 			);
 			path = SSUMAP_iOS;
 			sourceTree = "<group>";
@@ -163,6 +166,14 @@
 				DE087F661F062550004B092C /* Info.plist */,
 			);
 			path = SSUMAP_iOSUITests;
+			sourceTree = "<group>";
+		};
+		DE74E5621F0767CB00A36E56 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE087F461F062550004B092C /* ViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE087F471F062550004B092C /* ViewController.swift in Sources */,
+				DE74E5611F0766A900A36E56 /* BuildingModel.swift in Sources */,
 				DE087F451F062550004B092C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
