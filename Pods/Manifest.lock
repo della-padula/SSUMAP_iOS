@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.5.0)
+  - GoogleMaps (2.3.1):
+    - GoogleMaps/Maps (= 2.3.1)
+  - GoogleMaps/Base (2.3.1)
+  - GoogleMaps/Maps (2.3.1):
+    - GoogleMaps/Base
+  - GooglePlaces (2.3.1):
+    - GoogleMaps/Base (= 2.3.1)
+  - Kanna (2.1.1)
+  - Kingfisher (3.10.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - GoogleMaps
+  - GooglePlaces
+  - Kanna (~> 2.1.0)
+  - Kingfisher (~> 3.0)
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
+  GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
+  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
+
+PODFILE CHECKSUM: c9f5fd60b2b75933105fb512eb494a7069ff66e4
+
+COCOAPODS: 1.2.1

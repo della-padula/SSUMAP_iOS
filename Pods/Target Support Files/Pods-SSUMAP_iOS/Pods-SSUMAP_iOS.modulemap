@@ -1,0 +1,6 @@
+framework module Pods_SSUMAP_iOS {
+  umbrella header "Pods-SSUMAP_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

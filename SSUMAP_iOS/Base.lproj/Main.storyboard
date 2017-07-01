@@ -1,26 +1,120 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YYY-45-pnD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--홈-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="홈" id="BYZ-38-t0r" customClass="ViewController" customModule="SSUMAP_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0f-HV-hRu" userLabel="GoogleMapView" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzo-d6-ffh">
+                                <rect key="frame" x="248" y="537" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IV7-eL-RGa"/>
+                                    <constraint firstAttribute="width" secondItem="Rzo-d6-ffh" secondAttribute="height" multiplier="25:9" id="cS5-dD-qch"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="길찾기" backgroundImage="home_btn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="routeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHP-qS-Gtf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-uM-HSn">
+                                <rect key="frame" x="16" y="537" width="111" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ltd-uM-HSn" secondAttribute="height" multiplier="25:9" id="1NZ-kx-Om9"/>
+                                    <constraint firstAttribute="height" constant="40" id="Gck-QM-HpR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <state key="normal" title="주변시설" backgroundImage="home_btn"/>
+                                <connections>
+                                    <action selector="surroundingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W72-Ed-vTg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajq-H6-aaF" userLabel="CurLocationButton">
+                                <rect key="frame" x="157" y="526.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="LnQ-ka-wCr"/>
+                                    <constraint firstAttribute="width" secondItem="ajq-H6-aaF" secondAttribute="height" multiplier="1:1" id="d6t-mA-9i9"/>
+                                    <constraint firstAttribute="height" constant="60" id="hO0-Kw-sIm"/>
+                                </constraints>
+                                <state key="normal" image="center_btn"/>
+                                <connections>
+                                    <action selector="curLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uNt-56-3cM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rzo-d6-ffh" secondAttribute="bottom" constant="26" id="EZg-vR-GUI"/>
+                            <constraint firstItem="e0f-HV-hRu" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="LYq-wd-5wC"/>
+                            <constraint firstAttribute="trailing" secondItem="Rzo-d6-ffh" secondAttribute="trailing" constant="16" id="PxY-On-cFa"/>
+                            <constraint firstItem="ajq-H6-aaF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eOX-ee-J2H"/>
+                            <constraint firstItem="ajq-H6-aaF" firstAttribute="centerY" secondItem="ltd-uM-HSn" secondAttribute="centerY" id="fdd-f4-HXo"/>
+                            <constraint firstItem="ajq-H6-aaF" firstAttribute="centerY" secondItem="Rzo-d6-ffh" secondAttribute="centerY" id="g60-6D-yEd"/>
+                            <constraint firstItem="e0f-HV-hRu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gRH-vr-haC"/>
+                            <constraint firstItem="ltd-uM-HSn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="gba-5o-dFQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ltd-uM-HSn" secondAttribute="bottom" constant="26" id="hFA-ol-N7H"/>
+                            <constraint firstItem="e0f-HV-hRu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="kH5-dL-fw2"/>
+                            <constraint firstAttribute="trailing" secondItem="e0f-HV-hRu" secondAttribute="trailing" id="tfN-6f-aCQ"/>
+                            <constraint firstItem="ajq-H6-aaF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zak-9g-zCl"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CJu-1D-1gf"/>
+                    <connections>
+                        <outlet property="googleMapView" destination="e0f-HV-hRu" id="OdD-SM-srs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1037.5999999999999" y="787.55622188905556"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5L1-YY-UvC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YYY-45-pnD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="kHU-h2-oc0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.396078431372549" green="0.69411764705882351" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sB8-YI-iGG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCH-vh-BXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="787.55622188905556"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="center_btn" width="122" height="122"/>
+        <image name="home_btn" width="250" height="90"/>
+    </resources>
 </document>
