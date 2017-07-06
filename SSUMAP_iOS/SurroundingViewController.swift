@@ -22,15 +22,14 @@ class SurroundingViewController : UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         print(AppData.category_array[indexPath.row])
         
-//        guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "NoticeVC") as? NoticeViewController else {
-//            return
-//        }
-//        nextView.majorIndex = indexPath.row
-//        nextView.majorName = self.majorList[indexPath.row].getName()
-//        self.navigationController?.pushViewController(nextView, animated: true)
+        guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "SpotListVC") as? SpotListViewController else {
+            return
+        }
+        nextView.categoryIndex = indexPath.row
+        nextView.vcTitle = AppData.category_array[indexPath.row]
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
