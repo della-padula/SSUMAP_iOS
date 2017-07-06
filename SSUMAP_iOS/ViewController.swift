@@ -74,8 +74,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         let latestLocation: AnyObject = locations[locations.count - 1]
         
         
-        print(latestLocation.coordinate.latitude)
-        print(latestLocation.coordinate.longitude)
+        //print(latestLocation.coordinate.latitude)
+        //print(latestLocation.coordinate.longitude)
         
         self.cur_longitude = latestLocation.coordinate.longitude
         self.cur_latitude = latestLocation.coordinate.latitude
@@ -85,14 +85,14 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         geocoder.reverseGeocodeLocation(latestLocation as! CLLocation) {
             (placemarks, error) -> Void in
             if let placemarks = placemarks, placemarks.count > 0 {
-                let placemark = placemarks[0]
-                print(placemark)
+                //let placemark = placemarks[0]
+                //print(placemark)
             }
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("GPS Error => \(error.localizedDescription)")
+        //print("GPS Error => \(error.localizedDescription)")
     }
     
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -124,12 +124,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         } catch {
             NSLog("One or more of the map styles failed to load. \(error)")
         }
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: 37.494944, longitude: 126.959577)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = self.googleMapView
         
     }
     
