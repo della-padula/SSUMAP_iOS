@@ -11,35 +11,14 @@ import MapKit
 import CoreLocation
 import GoogleMaps
 
-let kMapStyle = "[" +
-    "  {" +
-    "    \"featureType\": \"poi.business\"," +
-    "    \"elementType\": \"all\"," +
-    "    \"stylers\": [" +
-    "      {" +
-    "        \"visibility\": \"off\"" +
-    "      }" +
-    "    ]" +
-    "  }," +
-    "  {" +
-    "    \"featureType\": \"transit\"," +
-    "    \"elementType\": \"labels.icon\"," +
-    "    \"stylers\": [" +
-    "      {" +
-    "        \"visibility\": \"off\"" +
-    "      }" +
-    "    ]" +
-    "  }" +
-"]"
-
 enum Location {
     case startLocation
     case destinationLocation
 }
 
-class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MTMapViewDelegate  {
     
-    @IBOutlet weak var googleMapView: GMSMapView!
+    @IBOutlet weak var daumMapView: MTMapView!
     
     var locationManager = CLLocationManager()
     var locationSelected = Location.startLocation
@@ -66,8 +45,11 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     }
     
     @IBAction func curLocationButton(_ sender: Any) {
-        let camera = GMSCameraPosition.camera(withLatitude: self.cur_latitude, longitude: self.cur_longitude, zoom: 17.0)
-        self.googleMapView.camera = camera
+        self.daumMapView.setZoomLevel(0, animated: true)
+        self.daumMapView.setMapCenter(
+            MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: self.cur_latitude,
+                                                         longitude: self.cur_longitude))  , animated: true)
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -109,22 +91,15 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         
-        //37.494944, 126.959577
-        let camera = GMSCameraPosition.camera(withLatitude: self.cur_latitude, longitude: self.cur_longitude, zoom: 17.0)
+        self.daumMapView.delegate = self
+        self.daumMapView.daumMapApiKey = "a6f6c230d7322afcfc70727168b0b001"
+        self.daumMapView.baseMapType = .standard
+        self.daumMapView.setZoomLevel(0, animated: true)
+        self.daumMapView.setMapCenter(
+            MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: self.cur_latitude,
+                                                         longitude: self.cur_longitude))  , animated: true)
         
-        self.googleMapView.delegate = self
-        self.googleMapView.camera = camera
-        self.googleMapView?.isMyLocationEnabled = true
-        self.googleMapView.settings.myLocationButton = false
-        self.googleMapView.settings.compassButton = true
-        self.googleMapView.settings.zoomGestures = true
-        
-        do {
-            self.googleMapView.mapStyle = try GMSMapStyle(jsonString: kMapStyle)
-        } catch {
-            NSLog("One or more of the map styles failed to load. \(error)")
-        }
-        
+        self.daumMapView.currentLocationTrackingMode = .onWithoutHeading
     }
     
     override func didReceiveMemoryWarning() {

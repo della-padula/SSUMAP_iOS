@@ -47,10 +47,10 @@ extension String {
     }
 }
 
-class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableViewDataSource, UITableViewDelegate, MTMapViewDelegate {
     var categoryIndex : Int?
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var googleMapView: GMSMapView!
+    @IBOutlet weak var daumMapView: MTMapView!
     
     var cur_longitude : Double = 126.959577
     var cur_latitude : Double = 37.494944
@@ -69,29 +69,20 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
     
     override func viewDidLoad() {
         self.elements.removeAll()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        
+        self.loadList(inputCategoryIndex: categoryIndex!, inputPage: page, inputTake: take)
         self.tableView.tableFooterView = UIView(frame: .zero)
         
         self.title = self.vcTitle!
         
-        let camera = GMSCameraPosition.camera(withLatitude: self.cur_latitude, longitude: self.cur_longitude, zoom: 17.0)
-        
-        self.googleMapView.delegate = self
-        self.googleMapView.camera = camera
-        self.googleMapView?.isMyLocationEnabled = true
-        self.googleMapView.settings.myLocationButton = false
-        self.googleMapView.settings.compassButton = true
-        self.googleMapView.settings.zoomGestures = true
-        
-        do {
-            self.googleMapView.mapStyle = try GMSMapStyle(jsonString: kMapStyle)
-        } catch {
-            NSLog("One or more of the map styles failed to load. \(error)")
-        }
-        
-        loadList(inputCategoryIndex: self.categoryIndex!, inputPage: self.page, inputTake: self.take)
-        
+        self.daumMapView.delegate = self
+        self.daumMapView.daumMapApiKey = "a6f6c230d7322afcfc70727168b0b001"
+        self.daumMapView.baseMapType = .standard
+        self.daumMapView.setZoomLevel(-1, animated: true)
+        self.daumMapView.setMapCenter(
+            MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: self.cur_latitude,
+                                                         longitude: self.cur_longitude))  , animated: true)
+        self.daumMapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,12 +99,16 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.googleMapView.clear()
+        //self.daumMapView.removeAllPOIItems()
+        
         selectedName = elements[indexPath.row].getName()
         selectedIndex = indexPath.row
-        showMarkerToMap(lat: elements[indexPath.row].getLatitude(), lon: elements[indexPath.row].getLongitude(), name: elements[indexPath.row].getName())
-        let camera = GMSCameraPosition.camera(withLatitude: elements[indexPath.row].getLatitude(), longitude: elements[indexPath.row].getLongitude(), zoom: 19.0)
-        self.googleMapView.camera = camera
+        
+        self.daumMapView.setZoomLevel(-2, animated: true)
+        self.daumMapView.setMapCenter(
+            MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: self.elements[indexPath.row].getLatitude(),
+                                                         longitude: self.elements[indexPath.row].getLongitude())), animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,16 +122,14 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
         return cell
     }
     
-    func showMarkerToMap(lat latitude : Double, lon longitude : Double, name nameSpot : String) {
-        let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let marker = GMSMarker(position: position)
-        marker.title = nameSpot
-        marker.snippet = "상세 정보 보기 >"
-        marker.map = self.googleMapView
-        marker.icon = UIImage(named: "map_marker")
-        marker.tracksInfoWindowChanges = true
+    func showMarkersToMap() {
+        var items = [MTMapPOIItem]()
+        for i in self.elements {
+            items.append(poiItem(name: i.getName(), latitude: i.getLatitude(), longitude: i.getLongitude()))
+        }
         
-        self.googleMapView.selectedMarker = marker
+        self.daumMapView.addPOIItems(items)
+        self.daumMapView.fitAreaToShowAllPOIItems()
     }
     
     func loadList(inputCategoryIndex categoryIndex: Int, inputPage page: Int, inputTake take: Int) {
@@ -162,6 +155,8 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
                 for i in 0..<result.count {
                     self.elements.append(Spot.init((result[i]["name"] as! String).replace(target: "+", withString: " ").decodeUrl(), (result[i]["address"] as! String).replace(target: "+", withString: " ").decodeUrl(), (result[i]["description"] as! String).replace(target: "+", withString: " ").decodeUrl(), result[i]["latitude"] as! Double, result[i]["longitude"] as! Double, categoryIndex, (result[i]["fileName"] as! String).replace(target: "+", withString: " ").decodeUrl()))
                 }
+                
+                self.showMarkersToMap()
                 
                 self.tableView.delegate = self
                 self.tableView.dataSource = self
@@ -193,5 +188,17 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
             self.spinner.stopAnimating()
             self.loadingView.removeFromSuperview()
         }
+    }
+    
+    func poiItem(name: String, latitude: Double, longitude: Double) -> MTMapPOIItem {
+        let item = MTMapPOIItem()
+        item.itemName = name
+        item.markerType = .redPin
+        item.markerSelectedType = .redPin
+        item.mapPoint = MTMapPoint(geoCoord: .init(latitude: latitude, longitude: longitude))
+        item.showAnimationType = .noAnimation
+        item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)    // 마커 위치 조정
+        
+        return item
     }
 }
