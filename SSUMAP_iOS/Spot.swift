@@ -16,8 +16,9 @@ class Spot {
     var longitude : Double
     var categoryIndex : Int
     var fileURL : String?
+    var phoneNumber : String?
     
-    init(_ name: String, _ address : String, _ description : String, _ latitude : Double, _ longitude : Double, _ categoryIndex : Int, _ fileURL : String) {
+    init(_ name: String, _ address : String, _ description : String, _ latitude : Double, _ longitude : Double, _ categoryIndex : Int, _ fileURL : String, _ phoneNumber : String) {
         self.name = name
         self.address = address
         self.description = description
@@ -25,6 +26,7 @@ class Spot {
         self.longitude = longitude
         self.categoryIndex = categoryIndex
         self.fileURL = fileURL
+        self.phoneNumber = phoneNumber
     }
     
     func getName() -> String {
@@ -53,5 +55,9 @@ class Spot {
     
     func getFileUrl() -> String {
         return self.fileURL!
+    }
+    
+    func getPhoneNumber() -> String {
+        return self.phoneNumber!
     }
 }

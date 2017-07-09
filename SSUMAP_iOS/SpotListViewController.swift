@@ -89,26 +89,21 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
         
     }
     
-    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailViewController else {
-            return
-        }
-        nextView.vcTitle = self.selectedName
-        nextView.spotItem = self.elements[selectedIndex!]
-        self.navigationController?.pushViewController(nextView, animated: true)
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.daumMapView.removeAllPOIItems()
         
         selectedName = elements[indexPath.row].getName()
         selectedIndex = indexPath.row
         
-        self.daumMapView.setZoomLevel(-2, animated: true)
-        self.daumMapView.setMapCenter(
-            MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: self.elements[indexPath.row].getLatitude(),
-                                                         longitude: self.elements[indexPath.row].getLongitude())), animated: true)
+        guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailViewController else {
+            return
+        }
+        nextView.vcTitle = self.selectedName
+        nextView.spotItem = self.elements[selectedIndex!]
+        nextView.start_lat = self.cur_latitude
+        nextView.start_lon = self.cur_longitude
         
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,19 +136,21 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
                 if(result.count < 1) {
                     print("Count가 0입니다.")
                     
-                    let no_account_dialog = UIAlertController(title: "장소 없음", message: "해당하는 장소가 없습니다.", preferredStyle: .alert)
                     
-                    let no_account_action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default) { (action: UIAlertAction) -> Void in
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                    no_account_dialog.addAction(no_account_action)
                     
-                    self.present(no_account_dialog, animated: true, completion: nil)
+//                    let no_account_dialog = UIAlertController(title: "장소 없음", message: "해당하는 장소가 없습니다.", preferredStyle: .alert)
+//                    
+//                    let no_account_action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default) { (alert : UIAlertAction!) in
+//                        self.dismiss(animated: true, completion: nil)
+//                    }
+//                    no_account_dialog.addAction(no_account_action)
+//                    
+//                    self.present(no_account_dialog, animated: true, completion: nil)
                     return
                 }
                 
                 for i in 0..<result.count {
-                    self.elements.append(Spot.init((result[i]["name"] as! String).replace(target: "+", withString: " ").decodeUrl(), (result[i]["address"] as! String).replace(target: "+", withString: " ").decodeUrl(), (result[i]["description"] as! String).replace(target: "+", withString: " ").decodeUrl(), result[i]["latitude"] as! Double, result[i]["longitude"] as! Double, categoryIndex, (result[i]["fileName"] as! String).replace(target: "+", withString: " ").decodeUrl()))
+                    self.elements.append(Spot.init((result[i]["name"] as! String).replace(target: "+", withString: " ").decodeUrl(), (result[i]["address"] as! String).replace(target: "+", withString: " ").decodeUrl(), (result[i]["description"] as! String).replace(target: "+", withString: " ").decodeUrl(), result[i]["latitude"] as! Double, result[i]["longitude"] as! Double, categoryIndex, (result[i]["fileName"] as! String).replace(target: "+", withString: " ").decodeUrl(), (result[i]["phoneNumber"] as! String)))
                 }
                 
                 self.showMarkersToMap()
