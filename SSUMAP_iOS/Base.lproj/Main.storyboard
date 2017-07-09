@@ -315,6 +315,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="spotIcon" destination="573-eF-bvt" id="VqI-Ja-Sg0"/>
                                             <outlet property="spotNameText" destination="3VD-pA-yGG" id="Hxp-xb-FE8"/>
                                         </connections>
                                     </tableViewCell>
