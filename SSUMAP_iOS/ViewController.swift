@@ -40,8 +40,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MTMapViewDele
                 self.navigationController?.pushViewController(nextView, animated: true)
     }
     
+    //캠퍼스 투어 버튼
     @IBAction func routeButton(_ sender: Any) {
-        
+        guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "campusTourVC") as? CampusTourViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     @IBAction func curLocationButton(_ sender: Any) {
