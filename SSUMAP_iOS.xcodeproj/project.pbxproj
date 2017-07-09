@@ -61,6 +61,8 @@
 		DEFBEF191F0F6FFB00DD9E4C /* point_sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFBEEFD1F0F6FFB00DD9E4C /* point_sprite.png */; };
 		DEFBEF1A1F0F6FFB00DD9E4C /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFBEEFE1F0F6FFB00DD9E4C /* shadow_balloon.png */; };
 		DEFBEF1B1F0F6FFB00DD9E4C /* th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFBEEFF1F0F6FFB00DD9E4C /* th_line.png */; };
+		DEFBEF261F122ECA00DD9E4C /* CampusTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBEF251F122ECA00DD9E4C /* CampusTourViewController.swift */; };
+		DEFBEF281F12367D00DD9E4C /* CampusTourItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBEF271F12367D00DD9E4C /* CampusTourItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		DEFBEEFD1F0F6FFB00DD9E4C /* point_sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_sprite.png; sourceTree = "<group>"; };
 		DEFBEEFE1F0F6FFB00DD9E4C /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
 		DEFBEEFF1F0F6FFB00DD9E4C /* th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th_line.png; sourceTree = "<group>"; };
+		DEFBEF251F122ECA00DD9E4C /* CampusTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTourViewController.swift; sourceTree = "<group>"; };
+		DEFBEF271F12367D00DD9E4C /* CampusTourItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTourItem.swift; sourceTree = "<group>"; };
 		F78FB6ECB14BD89C7D7645CD /* Pods_SSUMAP_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUMAP_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -255,6 +259,7 @@
 				DEC79E5E1F0E1C5700D75F9E /* ApiURL.swift */,
 				DEC79E631F0E241700D75F9E /* Spot.swift */,
 				DEC79E651F0E256300D75F9E /* SpotCell.swift */,
+				DEFBEF271F12367D00DD9E4C /* CampusTourItem.swift */,
 			);
 			path = SSUMAP_iOS;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				DE74E5661F07C2A200A36E56 /* SurroundingViewController.swift */,
 				DEC79E601F0E1CCD00D75F9E /* SpotListViewController.swift */,
 				DEC79E691F0E33B900D75F9E /* DetailViewController.swift */,
+				DEFBEF251F122ECA00DD9E4C /* CampusTourViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -646,8 +652,10 @@
 				DEC79E6A1F0E33B900D75F9E /* DetailViewController.swift in Sources */,
 				DEC79E611F0E1CCD00D75F9E /* SpotListViewController.swift in Sources */,
 				DE74E5671F07C2A200A36E56 /* SurroundingViewController.swift in Sources */,
+				DEFBEF261F122ECA00DD9E4C /* CampusTourViewController.swift in Sources */,
 				DE087F471F062550004B092C /* ViewController.swift in Sources */,
 				DE74E5651F07C1CA00A36E56 /* AppData.swift in Sources */,
+				DEFBEF281F12367D00DD9E4C /* CampusTourItem.swift in Sources */,
 				DE74E5611F0766A900A36E56 /* BuildingModel.swift in Sources */,
 				DEC79E5F1F0E1C5800D75F9E /* ApiURL.swift in Sources */,
 				DE087F451F062550004B092C /* AppDelegate.swift in Sources */,
