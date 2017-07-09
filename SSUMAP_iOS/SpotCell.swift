@@ -9,5 +9,6 @@
 import UIKit
 
 class SpotCell : UITableViewCell {
+    @IBOutlet var spotIcon: UIImageView!
     @IBOutlet weak var spotNameText: UILabel!
 }

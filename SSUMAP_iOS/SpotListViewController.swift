@@ -114,6 +114,7 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpotCell", for: indexPath) as! SpotCell
         cell.spotNameText.text = elements[indexPath.row].getName()
         cell.selectionStyle = .none
+        cell.spotIcon.image = AppData.category_image_array[categoryIndex!]
         return cell
     }
     
@@ -135,17 +136,6 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
                 self.hideActivityIndicator()
                 if(result.count < 1) {
                     print("Count가 0입니다.")
-                    
-                    
-                    
-//                    let no_account_dialog = UIAlertController(title: "장소 없음", message: "해당하는 장소가 없습니다.", preferredStyle: .alert)
-//                    
-//                    let no_account_action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default) { (alert : UIAlertAction!) in
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-//                    no_account_dialog.addAction(no_account_action)
-//                    
-//                    self.present(no_account_dialog, animated: true, completion: nil)
                     return
                 }
                 
@@ -190,8 +180,8 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
     func poiItem(name: String, latitude: Double, longitude: Double) -> MTMapPOIItem {
         let item = MTMapPOIItem()
         item.itemName = name
-        item.markerType = .redPin
-        item.markerSelectedType = .redPin
+        item.markerType = .bluePin
+        item.markerSelectedType = .none
         item.mapPoint = MTMapPoint(geoCoord: .init(latitude: latitude, longitude: longitude))
         item.showAnimationType = .noAnimation
         item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)    // 마커 위치 조정
