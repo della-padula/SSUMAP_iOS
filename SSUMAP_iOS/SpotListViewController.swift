@@ -76,7 +76,7 @@ class SpotListViewController : UIViewController, GMSMapViewDelegate, UITableView
         self.title = self.vcTitle!
         
         self.daumMapView.delegate = self
-        self.daumMapView.daumMapApiKey = "a6f6c230d7322afcfc70727168b0b001"
+        self.daumMapView.daumMapApiKey = AppData.daumApiKey
         self.daumMapView.baseMapType = .standard
         self.daumMapView.setZoomLevel(-1, animated: true)
         self.daumMapView.setMapCenter(

@@ -32,7 +32,7 @@ class CampusTourViewController : UIViewController, MTMapViewDelegate {
         self.title = "캠퍼스 투어"
         
         self.daumMap.delegate = self
-        self.daumMap.daumMapApiKey = "a6f6c230d7322afcfc70727168b0b001"
+        self.daumMap.daumMapApiKey = AppData.daumApiKey
         self.daumMap.baseMapType = .standard
         self.daumMap.setZoomLevel(1, animated: true)
         self.daumMap.setMapCenter(
