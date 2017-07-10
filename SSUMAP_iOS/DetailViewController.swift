@@ -1,6 +1,7 @@
 import UIKit
 import Kanna
 import Alamofire
+import CoreLocation
 import Kingfisher
 
 extension UIButton {
@@ -18,11 +19,20 @@ extension UIButton {
     }
 }
 
-class DetailViewController : UIViewController {
+class DetailViewController : UIViewController, CLLocationManagerDelegate {
     var vcTitle : String?
     var spotItem : Spot?
     var start_lat : Double?
     var start_lon : Double?
+    
+    var locationManager = CLLocationManager()
+    var locationSelected = Location.startLocation
+    
+    var locationStart = CLLocation()
+    var locationEnd = CLLocation()
+    
+    var cur_longitude : Double?
+    var cur_latitude : Double?
     
     var token = "e635c063-5164-347e-b787-dfd91da1d275"
     var loadingView: UIView = UIView()
@@ -51,7 +61,7 @@ class DetailViewController : UIViewController {
     @IBAction func routeButtonAction(_ sender: Any) {
         //daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=FOOT
         
-        let daummapHooks = "daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=FOOT"
+        let daummapHooks = "daummaps://route?sp=\(self.cur_latitude!),\(self.cur_longitude!)&ep=\(spotItem!.getLatitude()),\(spotItem!.getLongitude())&by=FOOT"
         let daummapUrl = URL(string: daummapHooks)
         if UIApplication.shared.canOpenURL(daummapUrl! as URL)
         {
@@ -59,7 +69,6 @@ class DetailViewController : UIViewController {
             
         } else {
             //redirect to safari because the user doesn't have Instagram
-            print("App not installed")
             UIApplication.shared.open(URL(string: "https://itunes.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%A7%B5-%EB%8B%A4%EC%9D%8C%EC%A7%80%EB%8F%84-4-0/id304608425?mt=8")!)
         }
     }
@@ -76,6 +85,15 @@ class DetailViewController : UIViewController {
     
     override func viewDidLoad() {
         self.title = self.vcTitle
+        
+        self.cur_latitude = self.start_lat!
+        self.cur_longitude = self.start_lon!
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
         self.spotNameText.text = spotItem?.getName()
         self.spotAddressText.text = spotItem?.getAddress()
         self.spotDescriptionText.text = spotItem?.getDescription()
@@ -122,15 +140,9 @@ class DetailViewController : UIViewController {
             if let result = response.result.value as? [String: Any] {
                 if let items = result["features"] as? [[String: Any]] {
                     if let item = items[0]["properties"] as? [String: Any] {
-                        print(item["totalDistance"])
-                        print(item["totalTime"])
-                        
                         let dist = item["totalDistance"] as! Double
                         let time = item["totalTime"] as! Int
                         
-//                        if dist < 1000 {
-//                            self.spotDistanceText.text = "\(dist)m"
-//                        } else {
                         let numberOfPlaces = 1.0
                         let multiplier = pow(10.0, numberOfPlaces)
                         let dist_double = dist / 1000.0
@@ -150,6 +162,29 @@ class DetailViewController : UIViewController {
                 }
             }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let latestLocation: AnyObject = locations[locations.count - 1]
+        
+        
+        print(latestLocation.coordinate.latitude)
+        print(latestLocation.coordinate.longitude)
+        
+        self.cur_longitude = latestLocation.coordinate.longitude
+        self.cur_latitude = latestLocation.coordinate.latitude
+        
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(latestLocation as! CLLocation) {
+            (placemarks, error) -> Void in
+            if let placemarks = placemarks, placemarks.count > 0 {
+                //let placemark = placemarks[0]
+                //print(placemark)
+            }
+        }
+        
+        self.getDistance()
     }
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {

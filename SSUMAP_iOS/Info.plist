@@ -34,6 +34,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>지도 정보를 제공하기 위해 위치 정보가 필요합니다.</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>daummaps</string>
+    </array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

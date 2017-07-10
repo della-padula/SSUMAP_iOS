@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SSUMAP_iOS/DetailViewController.swift"
-            timestampString = "521365823.151255"
+            timestampString = "521368925.389711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
             landmarkName = "alignVertical(spacing:)"
             landmarkType = "7">
             <Locations>
