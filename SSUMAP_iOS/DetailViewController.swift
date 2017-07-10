@@ -4,7 +4,7 @@ import Alamofire
 import Kingfisher
 
 extension UIButton {
-    func alignVertical(spacing: CGFloat = 6.0) {
+    func alignVertical(spacing: CGFloat = 3.0) {
         guard let imageSize = self.imageView?.image?.size,
             let text = self.titleLabel?.text,
             let font = self.titleLabel?.font
@@ -13,8 +13,8 @@ extension UIButton {
         let labelString = NSString(string: text)
         let titleSize = labelString.size(attributes: [NSFontAttributeName: font])
         self.imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + spacing), left: 0.0, bottom: 0.0, right: -titleSize.width)
-        let edgeOffset = abs(titleSize.height - imageSize.height) / 2.0;
-        self.contentEdgeInsets = UIEdgeInsets(top: edgeOffset, left: 0.0, bottom: edgeOffset, right: 0.0)
+        let edgeOffset = abs(titleSize.height - imageSize.height) / 2;
+        self.contentEdgeInsets = UIEdgeInsets(top: edgeOffset * 0.7, left: 0.0, bottom: edgeOffset, right: 0.0)
     }
 }
 
@@ -84,6 +84,10 @@ class DetailViewController : UIViewController {
         let pic_url = URL(string: (ApiURL.hostURL + "/files/" + (spotItem?.getFileUrl())!).encodeUrl())
         self.spotImage.kf.setImage(with: pic_url)
         self.spotCallText.text = spotItem?.getPhoneNumber()
+        
+        self.spotShareBtn.imageView?.contentMode = .scaleAspectFit
+        self.spotRouteBtn.imageView?.contentMode = .scaleAspectFit
+        self.spotCallBtn.imageView?.contentMode = .scaleAspectFit
         
         self.spotRouteBtn.alignVertical()
         self.spotCallBtn.alignVertical()

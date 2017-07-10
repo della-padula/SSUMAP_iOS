@@ -96,7 +96,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MTMapViewDele
         self.locationManager.startUpdatingLocation()
         
         self.daumMapView.delegate = self
-        self.daumMapView.daumMapApiKey = "a6f6c230d7322afcfc70727168b0b001"
+        self.daumMapView.daumMapApiKey = AppData.daumApiKey
         self.daumMapView.baseMapType = .standard
         self.daumMapView.setZoomLevel(0, animated: true)
         self.daumMapView.setMapCenter(

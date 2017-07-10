@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SSUMAP_iOS/DetailViewController.swift"
+            timestampString = "521365823.151255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "alignVertical(spacing:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in SSUMAP_iOS):__ObjC.UIButton.alignVertical (spacing : CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "SSUMAP_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/terry/taein/SSUMAP_iOS/SSUMAP_iOS/DetailViewController.swift"
+                  timestampString = "521365823.932352"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in SSUMAP_iOS):__ObjC.UIButton.alignVertical (spacing : CoreGraphics.CGFloat) -&gt; ()"
+                  moduleName = "SSUMAP_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/terry/taein/SSUMAP_iOS/SSUMAP_iOS/DetailViewController.swift"
+                  timestampString = "521365823.95865"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "8"
+                  endingLineNumber = "8"
+                  offsetFromSymbolStart = "399">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -32,4 +32,6 @@ class AppData {
         CampusTourItem.init("미래관", 37.495750, 126.958571, "내용"),
         CampusTourItem.init("Residence Hall", 37.495535, 126.960341, "내용"),
         CampusTourItem.init("정보과학관", 37.494669, 126.959691, "내용")]
+    
+    static var daumApiKey = "b342acae7fe96cfbe3363196e3ade1a3"
 }
