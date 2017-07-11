@@ -61,16 +61,30 @@ class DetailViewController : UIViewController, CLLocationManagerDelegate {
     @IBAction func routeButtonAction(_ sender: Any) {
         //daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=FOOT
         
-        let daummapHooks = "daummaps://route?sp=\(self.cur_latitude!),\(self.cur_longitude!)&ep=\(spotItem!.getLatitude()),\(spotItem!.getLongitude())&by=FOOT"
-        let daummapUrl = URL(string: daummapHooks)
-        if UIApplication.shared.canOpenURL(daummapUrl! as URL)
-        {
-            UIApplication.shared.open(daummapUrl!)
-            
-        } else {
-            //redirect to safari because the user doesn't have Instagram
-            UIApplication.shared.open(URL(string: "https://itunes.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%A7%B5-%EB%8B%A4%EC%9D%8C%EC%A7%80%EB%8F%84-4-0/id304608425?mt=8")!)
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        optionMenu.popoverPresentationController?.sourceView = self.view
+        
+        let personRoute = UIAlertAction(title: "보행자 길찾기", style: .default) { (alert : UIAlertAction!) in
+            self.openDaumMapRoute(1)
         }
+        
+        let carRoute = UIAlertAction(title: "자동차 길찾기", style: .default) { (alert : UIAlertAction!) in
+            self.openDaumMapRoute(2)
+        }
+        
+        let transRoute = UIAlertAction(title: "대중교통 길찾기", style: .default) { (alert : UIAlertAction!) in
+            self.openDaumMapRoute(3)
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (alert : UIAlertAction!) in
+            
+        }
+        
+        optionMenu.addAction(personRoute)
+        optionMenu.addAction(carRoute)
+        optionMenu.addAction(transRoute)
+        optionMenu.addAction(cancelAction)
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     @IBAction func shareButtonAction(_ sender: Any) {
@@ -81,6 +95,28 @@ class DetailViewController : UIViewController, CLLocationManagerDelegate {
     func displayShareSheet(shareContent:String) {
         let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
         present(activityViewController, animated: true, completion: {})
+    }
+    
+    func openDaumMapRoute(_ option : Int) {
+        var daummapHooks : String?
+        
+        if option == 1 {
+            daummapHooks = "daummaps://route?sp=\(self.cur_latitude!),\(self.cur_longitude!)&ep=\(spotItem!.getLatitude()),\(spotItem!.getLongitude())&by=FOOT"
+        } else if option == 2 {
+            daummapHooks = "daummaps://route?sp=\(self.cur_latitude!),\(self.cur_longitude!)&ep=\(spotItem!.getLatitude()),\(spotItem!.getLongitude())&by=CAR"
+        } else if option == 3 {
+            daummapHooks = "daummaps://route?sp=\(self.cur_latitude!),\(self.cur_longitude!)&ep=\(spotItem!.getLatitude()),\(spotItem!.getLongitude())&by=PUBLICTRANSIT"
+        }
+        
+        let daummapUrl = URL(string: daummapHooks!)
+        if UIApplication.shared.canOpenURL(daummapUrl! as URL)
+        {
+            UIApplication.shared.open(daummapUrl!)
+            
+        } else {
+            //redirect to safari because the user doesn't have Instagram
+            UIApplication.shared.open(URL(string: "https://itunes.apple.com/kr/app/%EC%B9%B4%EC%B9%B4%EC%98%A4%EB%A7%B5-%EB%8B%A4%EC%9D%8C%EC%A7%80%EB%8F%84-4-0/id304608425?mt=8")!)
+        }
     }
     
     override func viewDidLoad() {
