@@ -8,7 +8,8 @@ PODS:
   - GooglePlaces (2.3.1):
     - GoogleMaps/Base (= 2.3.1)
   - Kanna (2.1.1)
-  - Kingfisher (3.10.2)
+  - Kingfisher (3.10.3)
+  - SideMenu (2.3.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -16,14 +17,16 @@ DEPENDENCIES:
   - GooglePlaces
   - Kanna (~> 2.1.0)
   - Kingfisher (~> 3.0)
+  - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
   Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
-  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
+  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
+  SideMenu: a447554ae5c982e8077666389e1c8b0c8656e065
 
-PODFILE CHECKSUM: c9f5fd60b2b75933105fb512eb494a7069ff66e4
+PODFILE CHECKSUM: 628d1ad7a78f02ac5817a175d1593ed1ff5fda6b
 
 COCOAPODS: 1.2.1

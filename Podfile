@@ -9,6 +9,9 @@ target ‘SSUMAP_iOS’ do
   pod 'Kingfisher', '~> 3.0'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  
+  source 'https://github.com/CocoaPods/Specs.git'
+  pod 'SideMenu'
 end
 
   target 'SSUMAP_iOSTests' do

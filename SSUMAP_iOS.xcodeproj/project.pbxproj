@@ -63,6 +63,7 @@
 		DEFBEF1B1F0F6FFB00DD9E4C /* th_line.png in Resources */ = {isa = PBXBuildFile; fileRef = DEFBEEFF1F0F6FFB00DD9E4C /* th_line.png */; };
 		DEFBEF261F122ECA00DD9E4C /* CampusTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBEF251F122ECA00DD9E4C /* CampusTourViewController.swift */; };
 		DEFBEF281F12367D00DD9E4C /* CampusTourItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBEF271F12367D00DD9E4C /* CampusTourItem.swift */; };
+		DEFBEF2B1F1475CA00DD9E4C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFBEF2A1F1475CA00DD9E4C /* SideMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		DEFBEEFF1F0F6FFB00DD9E4C /* th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th_line.png; sourceTree = "<group>"; };
 		DEFBEF251F122ECA00DD9E4C /* CampusTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTourViewController.swift; sourceTree = "<group>"; };
 		DEFBEF271F12367D00DD9E4C /* CampusTourItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTourItem.swift; sourceTree = "<group>"; };
+		DEFBEF2A1F1475CA00DD9E4C /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F78FB6ECB14BD89C7D7645CD /* Pods_SSUMAP_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUMAP_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -290,6 +292,7 @@
 				DEC79E601F0E1CCD00D75F9E /* SpotListViewController.swift */,
 				DEC79E691F0E33B900D75F9E /* DetailViewController.swift */,
 				DEFBEF251F122ECA00DD9E4C /* CampusTourViewController.swift */,
+				DEFBEF2A1F1475CA00DD9E4C /* SideMenuViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				DEC79E611F0E1CCD00D75F9E /* SpotListViewController.swift in Sources */,
 				DE74E5671F07C2A200A36E56 /* SurroundingViewController.swift in Sources */,
 				DEFBEF261F122ECA00DD9E4C /* CampusTourViewController.swift in Sources */,
+				DEFBEF2B1F1475CA00DD9E4C /* SideMenuViewController.swift in Sources */,
 				DE087F471F062550004B092C /* ViewController.swift in Sources */,
 				DE74E5651F07C1CA00A36E56 /* AppData.swift in Sources */,
 				DEFBEF281F12367D00DD9E4C /* CampusTourItem.swift in Sources */,
