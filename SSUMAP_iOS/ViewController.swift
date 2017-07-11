@@ -17,7 +17,6 @@ enum Location {
 }
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MTMapViewDelegate  {
-    
     @IBOutlet weak var daumMapView: MTMapView!
     
     var locationManager = CLLocationManager()
@@ -34,10 +33,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MTMapViewDele
     }
     
     @IBAction func surroundingButton(_ sender: Any) {
-                guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "surroundingVC") as? SurroundingViewController else {
+        guard let nextView = self.storyboard?.instantiateViewController(withIdentifier: "surroundingVC") as? SurroundingViewController else {
                     return
-                }
-                self.navigationController?.pushViewController(nextView, animated: true)
+        }
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
     //캠퍼스 투어 버튼
@@ -53,15 +52,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MTMapViewDele
         self.daumMapView.setMapCenter(
             MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: self.cur_latitude,
                                                          longitude: self.cur_longitude))  , animated: true)
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let latestLocation: AnyObject = locations[locations.count - 1]
-        
-        
-        //print(latestLocation.coordinate.latitude)
-        //print(latestLocation.coordinate.longitude)
         
         self.cur_longitude = latestLocation.coordinate.longitude
         self.cur_latitude = latestLocation.coordinate.latitude
@@ -71,14 +65,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MTMapViewDele
         geocoder.reverseGeocodeLocation(latestLocation as! CLLocation) {
             (placemarks, error) -> Void in
             if let placemarks = placemarks, placemarks.count > 0 {
-                //let placemark = placemarks[0]
-                //print(placemark)
+                
             }
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        //print("GPS Error => \(error.localizedDescription)")
+        
     }
     
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
